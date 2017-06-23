@@ -10,7 +10,9 @@ class TaskInput extends Component {
 
   render() {
     return (
-      <input type="text"
+      <input
+        type="text"
+        className="task-input"
         placeholder="What needs to be done?"
         onChange={this.handleChange.bind(this)}
         onKeyPress={this.handleKeyPress.bind(this)}
