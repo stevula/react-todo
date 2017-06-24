@@ -3,9 +3,11 @@ import './BottomMenu.css';
 
 class BottomMenu extends Component {
   render() {
+    const itemCount = this.props.itemCount;
+
     return (
       <section className="bottom-menu">
-        1 item left | All Active Completed | Clear completed
+        {itemCount} item{itemCount === 1 ? '' : 's'} left | All Active Completed | Clear completed
       </section>
     );
   }

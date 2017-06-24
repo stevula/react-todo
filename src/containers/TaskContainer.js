@@ -17,7 +17,7 @@ class TaskContainer extends Component {
       <div className="task-container">
         <TaskInput addTask={this.addTask.bind(this)} />
         <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask.bind(this)} />
-        {this.state.tasks.length > 0 ? <BottomMenu /> : null}
+        {this.state.tasks.length > 0 ? <BottomMenu itemCount={this.state.tasks.length} /> : null}
       </div>
     )
   }
