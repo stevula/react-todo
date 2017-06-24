@@ -6,6 +6,13 @@ class Task extends Component {
     return (
       <div className="task">
         {this.props.description}
+        <button
+          id={this.props.id}
+          className="task-delete"
+          onClick={this.props.deleteTask}
+        >
+          X
+        </button>
       </div>
     );
   }
