@@ -21,7 +21,10 @@ class TaskContainer extends Component {
           tasks={this.filterTasks()}
           completeTask={this.completeTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)} />
-        <BottomMenu itemCount={this.state.tasks.length} setFilter={this.setFilter.bind(this)} />
+        <BottomMenu
+          itemCount={this.state.tasks.length}
+          setFilter={this.setFilter.bind(this)}
+          clearCompleted={this.clearCompleted.bind(this)} />
       </div>
     )
   }
@@ -66,6 +69,10 @@ class TaskContainer extends Component {
       if (this.state.filter === 'complete') return !t.active;
       return true;
     });
+  }
+
+  clearCompleted() {
+    this.setState({ tasks: this.state.tasks.filter(t => t.active === true) })
   }
 }
 

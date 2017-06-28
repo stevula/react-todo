@@ -12,7 +12,7 @@ class BottomMenu extends Component {
       <section className="bottom-menu">
         <TasksCounter itemCount={this.props.itemCount} />
         <TasksFilter setFilter={this.props.setFilter} />
-        Clear completed
+        <button onClick={this.props.clearCompleted}>Clear completed</button>
       </section>
     );
   }

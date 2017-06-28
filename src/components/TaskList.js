@@ -10,8 +10,7 @@ class TaskList extends Component {
         id={index}
         description={task.description}
         completeTask={this.props.completeTask}
-        deleteTask={this.props.deleteTask}
-      />
+        deleteTask={this.props.deleteTask} />
     ));
 
     return (
