@@ -34,27 +34,28 @@ class TaskContainer extends Component {
 
     const task = {
       description,
+      id: Math.floor(Math.random() * 100000), // TODO generate a uuid
       active: true,
     };
 
-    this.setState({
-      tasks: this.state.tasks.concat(task),
-    });
+    this.setState({ tasks: this.state.tasks.concat(task) });
   }
 
   completeTask(e) {
     const tasksCopy = this.state.tasks.slice(0);
     const taskId = e.target.parentElement.id;
-    const taskCopy = Object.assign({}, tasksCopy[taskId]);
+    const taskIndex = tasksCopy.findIndex(t => t.id === taskId);
+    const taskCopy = Object.assign({}, tasksCopy[taskIndex]);
     taskCopy.active = false;
-    tasksCopy[taskId] = taskCopy;
+    tasksCopy[taskIndex] = taskCopy;
     this.setState({ tasks: tasksCopy });
   }
 
   deleteTask(e) {
     const tasksCopy = this.state.tasks.slice(0);
     const taskId = e.target.parentElement.id;
-    tasksCopy.splice(taskId, 1);
+    const taskIndex = tasksCopy.findIndex(t => t.id === taskId);
+    tasksCopy.splice(taskIndex, 1);
     this.setState({ tasks: tasksCopy });
   }
 

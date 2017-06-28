@@ -4,10 +4,10 @@ import Task from './Task';
 
 class TaskList extends Component {
   render() {
-    const tasks = this.props.tasks.map((task, index) => (
+    const tasks = this.props.tasks.map((task) => (
       <Task
-        key={index}
-        id={index}
+        key={task.id}
+        id={task.id}
         description={task.description}
         completeTask={this.props.completeTask}
         deleteTask={this.props.deleteTask} />
