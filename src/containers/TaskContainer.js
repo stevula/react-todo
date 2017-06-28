@@ -34,7 +34,7 @@ class TaskContainer extends Component {
 
     const task = {
       description,
-      id: Math.floor(Math.random() * 100000), // TODO generate a uuid
+      id: String(Math.floor(Math.random() * 100000)), // TODO generate a uuid
       active: true,
     };
 
