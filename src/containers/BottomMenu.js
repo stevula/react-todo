@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './BottomMenu.css';
+import TasksCounter from '../components/TasksCounter';
+import TasksFilter from '../components/TasksFilter';
 
 class BottomMenu extends Component {
   render() {
     const itemCount = this.props.itemCount;
+    if (itemCount === 0) return null;
 
     return (
       <section className="bottom-menu">
-        {itemCount} item{itemCount === 1 ? '' : 's'} left | All Active Completed | Clear completed
+        <TasksCounter itemCount={this.props.itemCount} />
+        <TasksFilter setFilter={this.props.setFilter} />
+        Clear completed
       </section>
     );
   }

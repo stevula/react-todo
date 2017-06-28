@@ -8,6 +8,7 @@ class TaskContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      filter: 'active',
       tasks: [],
     }
   }
@@ -16,25 +17,44 @@ class TaskContainer extends Component {
     return (
       <div className="task-container">
         <TaskInput addTask={this.addTask.bind(this)} />
-        <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask.bind(this)} />
-        {this.state.tasks.length > 0 ? <BottomMenu itemCount={this.state.tasks.length} /> : null}
+        <TaskList
+          tasks={this.filterTasks()}
+          deleteTask={this.deleteTask.bind(this)} />
+        <BottomMenu itemCount={this.state.tasks.length} setFilter={this.setFilter.bind(this)} />
       </div>
     )
   }
 
   addTask(description) {
-    if (!description) return null;
+    if (!description) return false;
+
+    const task = {
+      description,
+      active: true,
+    };
 
     this.setState({
-      tasks: this.state.tasks.concat(description),
+      tasks: this.state.tasks.concat(task),
     });
   }
 
   deleteTask(e) {
-    e.preventDefault();
     const tasks = this.state.tasks.slice(0);
     tasks.splice(e.target.id, 1);
     this.setState({ tasks });
+  }
+
+  setFilter(filter) {
+    if (!['all', 'active', 'complete'].includes(filter)) return false;
+    this.setState({ filter });
+  }
+
+  filterTasks() {
+    return this.state.tasks.filter(t => {
+      if (this.state.filter === 'active') return t.active;
+      if (this.state.filter === 'complete') return !t.active;
+      return true;
+    });
   }
 }
 
