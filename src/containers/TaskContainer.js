@@ -19,6 +19,7 @@ class TaskContainer extends Component {
         <TaskInput addTask={this.addTask.bind(this)} />
         <TaskList
           tasks={this.filterTasks()}
+          completeTask={this.completeTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)} />
         <BottomMenu itemCount={this.state.tasks.length} setFilter={this.setFilter.bind(this)} />
       </div>
@@ -38,10 +39,20 @@ class TaskContainer extends Component {
     });
   }
 
+  completeTask(e) {
+    const tasksCopy = this.state.tasks.slice(0);
+    const taskId = e.target.parentElement.id;
+    const taskCopy = Object.assign({}, tasksCopy[taskId]);
+    taskCopy.active = false;
+    tasksCopy[taskId] = taskCopy;
+    this.setState({ tasks: tasksCopy });
+  }
+
   deleteTask(e) {
-    const tasks = this.state.tasks.slice(0);
-    tasks.splice(e.target.id, 1);
-    this.setState({ tasks });
+    const tasksCopy = this.state.tasks.slice(0);
+    const taskId = e.target.parentElement.id;
+    tasksCopy.splice(taskId, 1);
+    this.setState({ tasks: tasksCopy });
   }
 
   setFilter(filter) {

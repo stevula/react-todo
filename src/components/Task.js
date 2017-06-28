@@ -4,13 +4,12 @@ import './Task.css';
 class Task extends Component {
   render() {
     return (
-      <div className="task">
-        {this.props.description}
-        <button
-          id={this.props.id}
-          className="task-delete"
-          onClick={this.props.deleteTask}
-        >
+      <div id={this.props.id} className="task">
+        <button className="task-complete" onClick={this.props.completeTask}>
+          ✓
+        </button>
+          {this.props.description}
+        <button className="task-delete" onClick={this.props.deleteTask}>
           X
         </button>
       </div>

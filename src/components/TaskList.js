@@ -9,6 +9,7 @@ class TaskList extends Component {
         key={index}
         id={index}
         description={task.description}
+        completeTask={this.props.completeTask}
         deleteTask={this.props.deleteTask}
       />
     ));
