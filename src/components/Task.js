@@ -3,8 +3,10 @@ import './Task.css';
 
 class Task extends Component {
   render() {
+    const classNames = ['task', (this.props.active ? 'active' : 'inactive')]
+
     return (
-      <li id={this.props.id} className="task {this.props.active ? 'active' ? 'inactive'}">
+      <li id={this.props.id} className={classNames.join(' ')}>
         <button className="task-complete" onClick={this.props.completeTask}>
           ✓
         </button>

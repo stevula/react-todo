@@ -4,3 +4,7 @@
   padding: 1em;
   width: 100%;
 }
+
+.task.inactive {
+  text-decoration: line-through;
+}
