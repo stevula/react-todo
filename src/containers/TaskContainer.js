@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './TaskContainer.css';
-import TaskInput from '../components/TaskInput';
-import TaskList from '../components/TaskList';
 import Menu from './Menu';
+import InputContainer from './InputContainer';
+import TaskList from '../components/TaskList';
 
 class TaskContainer extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class TaskContainer extends Component {
   render() {
     return (
       <div className="task-container">
-        <TaskInput addTask={this.addTask.bind(this)} />
+        <InputContainer addTask={this.addTask.bind(this)} />
         <TaskList
           tasks={this.filterTasks(this.state.filter)}
           completeTask={this.completeTask.bind(this)}
