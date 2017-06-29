@@ -8,9 +8,9 @@ class Task extends Component {
     return (
       <li id={this.props.id} className={classNames.join(' ')}>
         <button className="task-complete" onClick={this.props.completeTask}>
-          ✓
+          {this.props.active ? ' ' : '✓'}
         </button>
-          {this.props.description}
+          <span className="description">{this.props.description}</span>
         <button className="task-delete" onClick={this.props.deleteTask}>
           x
         </button>

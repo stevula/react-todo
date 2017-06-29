@@ -1,10 +1,35 @@
 .task {
+  align-items:;
   border: none;
+  display: flex;
   box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
   padding: 1em;
   width: 100%;
 }
 
-.task.inactive {
+.task .description {
+  align-items: center;
+  display: flex;
+  width: 90%;
+}
+
+.task.inactive .description {
   text-decoration: line-through;
+}
+
+.task-complete {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2em;
+  margin-right: 1em;
+  width: 2em;
+}
+
+.task-delete {
+  color: rgb(175, 47, 47);
+  visibility: hidden;
+}
+
+.task:hover .task-delete {
+  visibility: visible;
 }
