@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  font-size: smaller;
+  font-weight: lighter;
+  justify-content: space-between;
+  padding: .4em 0;
+  text-align: center;
+}
+
+.menu div {
+  align-items: center;
+  display: flex;
+  padding: 0 1em;
+}
+
+.menu div:first-of-type {
+  text-align: left;
+}
+
+.menu div:last-of-type {
+  text-align: right;
+}

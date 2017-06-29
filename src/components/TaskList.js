@@ -15,9 +15,9 @@ class TaskList extends Component {
     ));
 
     return (
-      <section className="task-list">
+      <ul className="task-list">
         {tasks}
-      </section>
+      </ul>
     )
   }
 }

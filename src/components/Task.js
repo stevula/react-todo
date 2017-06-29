@@ -4,15 +4,15 @@ import './Task.css';
 class Task extends Component {
   render() {
     return (
-      <div id={this.props.id} className="task {this.props.active ? 'active' ? 'inactive'}">
+      <li id={this.props.id} className="task {this.props.active ? 'active' ? 'inactive'}">
         <button className="task-complete" onClick={this.props.completeTask}>
           ✓
         </button>
           {this.props.description}
         <button className="task-delete" onClick={this.props.deleteTask}>
-          X
+          x
         </button>
-      </div>
+      </li>
     );
   }
 }

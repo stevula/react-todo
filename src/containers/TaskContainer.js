@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './TaskContainer.css';
 import TaskInput from '../components/TaskInput';
 import TaskList from '../components/TaskList';
-import BottomMenu from './BottomMenu';
+import Menu from './Menu';
 
 class TaskContainer extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class TaskContainer extends Component {
           tasks={this.filterTasks(this.state.filter)}
           completeTask={this.completeTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)} />
-        <BottomMenu
+        <Menu
           itemCount={this.state.tasks.length}
           activeFilter={this.state.filter}
           setFilter={this.setFilter.bind(this)}
