@@ -20,3 +20,7 @@
 .menu div:last-of-type {
   text-align: right;
 }
+
+.clear-completed:hover {
+  text-decoration: underline;
+}

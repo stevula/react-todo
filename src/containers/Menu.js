@@ -12,7 +12,7 @@ class Menu extends Component {
       <section className="menu">
         <TasksCounter itemCount={this.props.itemCount} />
         <TasksFilter activeFilter={this.props.activeFilter} setFilter={this.props.setFilter} />
-        <div>
+        <div className="clear-completed">
           {/* TODO show this only if there are completed tasks */}
           <button onClick={this.props.clearCompleted}>Clear completed</button>
         </div>
