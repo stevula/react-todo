@@ -1,9 +1,9 @@
 .menu {
   display: flex;
-  font-size: smaller;
+  font-size: small;
   font-weight: lighter;
   justify-content: space-between;
-  padding: .4em 0;
+  padding: 1em 0;
   text-align: center;
 }
 

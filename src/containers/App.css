@@ -1,5 +1,5 @@
 .App {
-  justify-content: center;
+  flex-grow: 1;
   max-width: 550px;
   min-width: 230px;
 }

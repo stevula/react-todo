@@ -10,7 +10,12 @@
 .task .description {
   align-items: center;
   display: flex;
+  font-size: x-large;
   width: 90%;
+}
+
+.task.inactive .task-complete {
+  color: #6dd06d;
 }
 
 .task.inactive .description {
