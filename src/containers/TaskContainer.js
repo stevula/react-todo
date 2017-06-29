@@ -22,7 +22,7 @@ class TaskContainer extends Component {
           completeTask={this.completeTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)} />
         <Menu
-          itemCount={this.state.tasks.length}
+          tasks={this.state.tasks}
           activeFilter={this.state.filter}
           setFilter={this.setFilter.bind(this)}
           clearCompleted={this.clearCompleted.bind(this)} />
