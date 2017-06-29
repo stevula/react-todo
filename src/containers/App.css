@@ -3,3 +3,11 @@
   max-width: 550px;
   min-width: 230px;
 }
+
+.header h1 {
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 10rem;
+  font-weight: lighter;
+  text-align: center;
+  text-transform: lowercase;
+}

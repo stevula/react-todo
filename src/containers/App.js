@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header';
-import Main from './Main';
+import TaskContainer from './TaskContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Main />
+        <header className="header">
+          <h1>Todos</h1>
+        </header>
+
+        <main className="main">
+          <TaskContainer />
+        </main>
       </div>
     )
   }

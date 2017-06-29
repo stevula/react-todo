@@ -32,6 +32,7 @@
 
 .task-delete {
   color: rgb(175, 47, 47);
+  font-size: x-large;
   visibility: hidden;
 }
 
