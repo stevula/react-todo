@@ -18,11 +18,12 @@ class TaskContainer extends Component {
       <div className="task-container">
         <TaskInput addTask={this.addTask.bind(this)} />
         <TaskList
-          tasks={this.filterTasks()}
+          tasks={this.filterTasks(this.state.filter)}
           completeTask={this.completeTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)} />
         <BottomMenu
           itemCount={this.state.tasks.length}
+          activeFilter={this.state.filter}
           setFilter={this.setFilter.bind(this)}
           clearCompleted={this.clearCompleted.bind(this)} />
       </div>
@@ -64,10 +65,10 @@ class TaskContainer extends Component {
     this.setState({ filter });
   }
 
-  filterTasks() {
+  filterTasks(filter) {
     return this.state.tasks.filter(t => {
-      if (this.state.filter === 'active') return t.active;
-      if (this.state.filter === 'complete') return !t.active;
+      if (filter === 'active') return t.active;
+      if (filter === 'complete') return !t.active;
       return true;
     });
   }

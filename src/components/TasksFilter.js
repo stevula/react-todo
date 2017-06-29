@@ -4,10 +4,22 @@ import './TasksFilter.css';
 class TasksFilter extends Component {
   render() {
     return (
-      <div>
-        <button onClick={() => this.props.setFilter('all')}>All</button>
-        <button onClick={() => this.props.setFilter('active')}>Active</button>
-        <button onClick={() => this.props.setFilter('complete')}>Completed</button>
+      <div className="task-filter">
+        <button
+          className={this.props.activeFilter === 'all' ? 'active' : ''}
+          onClick={() => this.props.setFilter('all')}>
+          All
+        </button>
+        <button
+          className={this.props.activeFilter === 'active' ? 'active' : ''}
+          onClick={() => this.props.setFilter('active')}>
+          Active
+        </button>
+        <button
+          className={this.props.activeFilter === 'complete' ? 'active' : ''}
+          onClick={() => this.props.setFilter('complete')}>
+          Completed
+        </button>
       </div>
     );
   }

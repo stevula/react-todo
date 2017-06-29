@@ -4,7 +4,7 @@ import './TasksCounter.css';
 class TasksCounter extends Component {
   render() {
     return (
-      <div>
+      <div className="task-counter">
         {this.props.itemCount} item{this.props.itemCount === 1 ? '' : 's'} left
       </div>
     );

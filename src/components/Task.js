@@ -4,7 +4,7 @@ import './Task.css';
 class Task extends Component {
   render() {
     return (
-      <div id={this.props.id} className="task">
+      <div id={this.props.id} className="task {this.props.active ? 'active' ? 'inactive'}">
         <button className="task-complete" onClick={this.props.completeTask}>
           ✓
         </button>
