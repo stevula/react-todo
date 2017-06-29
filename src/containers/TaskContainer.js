@@ -47,7 +47,7 @@ class TaskContainer extends Component {
     const taskId = e.target.parentElement.id;
     const taskIndex = tasksCopy.findIndex(t => t.id === taskId);
     const taskCopy = Object.assign({}, tasksCopy[taskIndex]);
-    taskCopy.active = false;
+    taskCopy.active = !taskCopy.active;
     tasksCopy[taskIndex] = taskCopy;
     this.setState({ tasks: tasksCopy });
   }
