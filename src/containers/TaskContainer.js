@@ -16,7 +16,10 @@ class TaskContainer extends Component {
   render() {
     return (
       <div className="task-container">
-        <InputContainer addTask={this.addTask.bind(this)} />
+        <InputContainer
+          toggleAllTaskStatus={this.toggleAllTaskStatus.bind(this)}
+          tasks={this.state.tasks}
+          addTask={this.addTask.bind(this)} />
         <TaskList
           tasks={this.filterTasks(this.state.filter)}
           completeTask={this.completeTask.bind(this)}
@@ -75,6 +78,20 @@ class TaskContainer extends Component {
 
   clearCompleted() {
     this.setState({ tasks: this.state.tasks.filter(t => t.active === true) })
+  }
+
+  toggleAllTaskStatus() {
+    let tasksCopy;
+
+    if (this.state.tasks.some(task => task.active)) {
+      // toggle active to inactive
+      tasksCopy = this.state.tasks.map(task => Object.assign({}, task, { active: false }));
+    } else {
+      // toggle all to active
+      tasksCopy = this.state.tasks.map(task => Object.assign({}, task, { active: true }));
+    }
+
+    this.setState({ tasks: tasksCopy });
   }
 }
 

@@ -7,7 +7,7 @@ class InputContainer extends Component {
   render() {
     return (
       <div className="input-container">
-        <ToggleAll />
+        <ToggleAll toggleAllTaskStatus={this.props.toggleAllTaskStatus} />
         <TaskInput addTask={this.props.addTask} />
       </div>
     );
