@@ -18,7 +18,7 @@ class TaskList extends Component {
       <ul className="task-list">
         {tasks}
       </ul>
-    )
+    );
   }
 }
 

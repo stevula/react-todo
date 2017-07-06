@@ -10,7 +10,7 @@ class TaskContainer extends Component {
     this.state = {
       filter: 'active',
       tasks: [],
-    }
+    };
   }
 
   render() {
@@ -30,7 +30,7 @@ class TaskContainer extends Component {
           setFilter={this.setFilter.bind(this)}
           clearCompleted={this.clearCompleted.bind(this)} />
       </div>
-    )
+    );
   }
 
   addTask(description) {
