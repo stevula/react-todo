@@ -1,41 +1,36 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './TasksList.css';
-import FooterMenu from '../containers/FooterMenu';
-import Task from '../components/Task';
+import FooterMenu from './FooterMenu';
+import TaskContainer from '../containers/TaskContainer';
 import TaskInputContainer from '../containers/TaskInputContainer';
-import { addTask, setFilter } from '../actions';
 
 
-class TasksList extends Component {
-  render() {
-    return (
-      <div className="task-container">
-        <div className="input-container">
-          <button className="toggle-all" onClick={this.toggleAllTaskStatus}>^</button>
-          <TaskInputContainer />
-        </div>
-
-        <ul className="task-list">
-          {
-            [].map((task) => (
-              <Task
-                key={task.id}
-                active={task.active}
-                description={task.description}
-                onClickComplete={this.completeTask}
-                onClickDelete={this.deleteTask} />
-            ))
-          }
-        </ul>
-
-        <FooterMenu
-          tasks={[]}
-          activeFilter={''}
-          clearCompleted={this.clearCompleted} />
+const TasksList = ({ tasks }) => {
+  return (
+    <div className="task-container">
+      <div className="input-container">
+        <button className="toggle-all" onClick={this.toggleAllTaskStatus}>^</button>
+        <TaskInputContainer />
       </div>
-    );
-  }
+
+      <ul className="task-list">
+        {
+          tasks.map((task) => (
+            <TaskContainer
+              key={task.id}
+              id={task.id}
+              active={task.active}
+              description={task.description} />
+          ))
+        }
+      </ul>
+
+      <FooterMenu
+        tasks={tasks}
+        activeFilter={'all'}
+        clearCompleted={this.clearCompleted} />
+    </div>
+  );
 
   // completeTask(e) {
   //   const tasksCopy = this.state.tasks.slice(0);
@@ -85,6 +80,6 @@ class TasksList extends Component {
   //     return true;
   //   });
   // }
-}
+};
 
 export default TasksList;

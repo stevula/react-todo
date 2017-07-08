@@ -16,6 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
+console.log(TaskInput)
+
 const TaskInputContainer = connect(
   mapStateToProps,
   mapDispatchToProps,

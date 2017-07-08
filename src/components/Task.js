@@ -13,6 +13,6 @@ const Task = ({ active, description, onClickComplete, onClickDelete }) => {
       <button className="task-delete" onClick={onClickDelete}>x</button>
     </li>
   );
-}
+};
 
 export default Task;

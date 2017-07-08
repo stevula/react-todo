@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FooterMenu.css';
-import FilterContainer from './FilterContainer';
+import FilterContainer from '../containers/FilterContainer';
 
 
 class FooterMenu extends Component {

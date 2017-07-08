@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TasksList from '../components/TasksList';
+import TasksListContainer from '../containers/TasksListContainer';
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
         </header>
 
         <main className="main">
-          <TasksList />
+          <TasksListContainer />
         </main>
       </div>
     );
