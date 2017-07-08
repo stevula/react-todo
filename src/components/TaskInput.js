@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './TaskInput.css';
 
+
 class TaskInput extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ class TaskInput extends Component {
 
   handleKeyPress(e) {
     if (e.key === 'Enter') {
-      this.props.addTask(this.state.value);
+      this.props.onEnter(this.state.value);
       this.setState({ value: '' });
     }
   }

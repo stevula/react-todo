@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import TaskContainer from './TaskContainer';
+import TasksList from '../components/TasksList';
+
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
         </header>
 
         <main className="main">
-          <TaskContainer />
+          <TasksList />
         </main>
       </div>
     );

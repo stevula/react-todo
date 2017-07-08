@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TasksCounter from './TasksCounter';
+import TasksList from './TasksList';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TasksCounter />, div);
+  ReactDOM.render(<TasksList />, div);
 });

@@ -24,3 +24,24 @@
 .clear-completed:hover {
   text-decoration: underline;
 }
+
+.task-filter {
+  display: flex;
+  justify-content: space-around;
+}
+
+.task-filter button {
+  border: 1px solid transparent;
+  margin: 0 .3em;
+}
+
+.task-filter button.active {
+  border: 1px solid rgba(175, 47, 47, 0.15);
+  border-radius: 3px;
+}
+
+.task-filter button:hover {
+  border: 1px solid rgba(175, 47, 47, 0.09);
+  border-radius: 3px;
+}
+

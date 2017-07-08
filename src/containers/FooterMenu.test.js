@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TaskContainer from './TaskContainer';
+import FooterMenu from './FooterMenu';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TaskContainer />, div);
+  ReactDOM.render(<FooterMenu />, div);
 });
