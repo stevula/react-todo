@@ -10,7 +10,9 @@ class Menu extends Component {
     return (
       <section className="menu">
         <TasksCounter itemCount={this.props.tasks.filter(t => t.active).length} />
+
         <TasksFilter activeFilter={this.props.activeFilter} setFilter={this.props.setFilter} />
+
         <div className="clear-completed">
           <button
             className={this.props.tasks.some(t => !t.active) ? '' : 'invisible'}

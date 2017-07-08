@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './TaskContainer.css';
 import Menu from './Menu';
-import InputContainer from './InputContainer';
 import Task from '../components/Task';
+import ToggleAll from '../components/ToggleAll';
+import TaskInput from '../components/TaskInput';
 
 class TaskContainer extends Component {
   constructor(props) {
@@ -16,10 +17,11 @@ class TaskContainer extends Component {
   render() {
     return (
       <div className="task-container">
-        <InputContainer
-          toggleAllTaskStatus={this.toggleAllTaskStatus.bind(this)}
-          tasks={this.state.tasks}
-          addTask={this.addTask.bind(this)} />
+
+        <div className="input-container">
+          <ToggleAll toggleAllTaskStatus={this.toggleAllTaskStatus.bind(this)} />
+          <TaskInput addTask={this.addTask.bind(this)} />
+        </div>
 
         <ul className="task-list">
           {
