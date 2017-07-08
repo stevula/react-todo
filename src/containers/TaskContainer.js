@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './TaskContainer.css';
 import Menu from './Menu';
 import InputContainer from './InputContainer';
-import TaskList from '../components/TaskList';
+import Task from '../components/Task';
 
 class TaskContainer extends Component {
   constructor(props) {
@@ -20,10 +20,21 @@ class TaskContainer extends Component {
           toggleAllTaskStatus={this.toggleAllTaskStatus.bind(this)}
           tasks={this.state.tasks}
           addTask={this.addTask.bind(this)} />
-        <TaskList
-          tasks={this.filterTasks(this.state.filter)}
-          completeTask={this.completeTask.bind(this)}
-          deleteTask={this.deleteTask.bind(this)} />
+
+        <ul className="task-list">
+          {
+            this.filterTasks(this.state.filter).map((task) => (
+              <Task
+                key={task.id}
+                id={task.id}
+                description={task.description}
+                completeTask={this.completeTask.bind(this)}
+                deleteTask={this.deleteTask.bind(this)}
+                active={task.active} />
+            ))
+          }
+        </ul>
+
         <Menu
           tasks={this.state.tasks}
           activeFilter={this.state.filter}
@@ -65,6 +76,7 @@ class TaskContainer extends Component {
 
   setFilter(filter) {
     if (!['all', 'active', 'complete'].includes(filter)) return false;
+    console.log(filter)
     this.setState({ filter });
   }
 

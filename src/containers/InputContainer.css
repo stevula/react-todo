@@ -3,3 +3,9 @@
   display: flex;
   font-size: x-large;
 }
+
+.task-list {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
