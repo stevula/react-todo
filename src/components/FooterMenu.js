@@ -7,6 +7,7 @@ class FooterMenu extends Component {
   render() {
     if (this.props.tasks.length === 0) return null;
 
+    // TODO factor this out
     const itemCount = this.props.tasks.filter(t => t.active).length;
 
     return (

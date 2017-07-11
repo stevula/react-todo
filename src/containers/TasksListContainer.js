@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setFilter } from '../actions';
+import { setFilter, toggleAll } from '../actions';
 import TasksList from '../components/TasksList';
 
 
@@ -15,9 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    // onClickToggleAll: () => {
-    //   dispatch(setFilter(ownProps.filter));
-    // },
+    onClickToggleAll: () => {
+      dispatch(toggleAll())
+    },
   };
 };
 

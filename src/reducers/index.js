@@ -4,6 +4,7 @@ import {
   ADD_TODO,
   DELETE_TODO,
   TOGGLE_TODO,
+  TOGGLE_ALL,
   SET_FILTER,
 } from '../actions';
 
@@ -28,6 +29,14 @@ function tasks(state = [], action) {
         }
         return todo;
       });
+    case TOGGLE_ALL:
+      if (state.some(task => task.active)) {
+        // toggle active to inactive
+        return state.map(task => Object.assign({}, task, { active: false }));
+      } else {
+        // toggle all to active
+        return state.map(task => Object.assign({}, task, { active: true }));
+      }
     default:
       return state;
   }
