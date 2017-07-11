@@ -5,7 +5,7 @@ import TaskContainer from '../containers/TaskContainer';
 import TaskInputContainer from '../containers/TaskInputContainer';
 
 
-const TasksList = ({ tasks, onClickToggleAll }) => {
+const TasksList = ({ tasks, onClickToggleAll, onClickClearInactive }) => {
   return (
     <div className="task-container">
       <div className="input-container">
@@ -28,13 +28,9 @@ const TasksList = ({ tasks, onClickToggleAll }) => {
       <FooterMenu
         tasks={tasks}
         activeFilter={'all'}
-        clearCompleted={this.clearCompleted} />
+        deleteInactive={onClickClearInactive} />
     </div>
   );
-
-  // clearCompleted() {
-  //   this.setState({ tasks: this.state.tasks.filter(t => t.active === true) })
-  // }
 };
 
 export default TasksList;

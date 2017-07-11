@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setFilter, toggleAll } from '../actions';
+import { setFilter, toggleAll, deleteInactive } from '../actions';
 import TasksList from '../components/TasksList';
 
 
@@ -16,7 +16,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClickToggleAll: () => {
-      dispatch(toggleAll())
+      dispatch(toggleAll());
+    },
+    onClickClearInactive: () => {
+      dispatch(deleteInactive());
     },
   };
 };

@@ -3,6 +3,7 @@ import {
   FILTERS,
   ADD_TODO,
   DELETE_TODO,
+  DELETE_INACTIVE,
   TOGGLE_TODO,
   TOGGLE_ALL,
   SET_FILTER,
@@ -12,22 +13,21 @@ import {
 function tasks(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
-      return state.slice(0).concat({
+      return state.concat({
         id: action.id,
         description: action.description,
         active: true,
       });
     case DELETE_TODO:
-      const tasks = state.slice(0);
-      const taskIndex = tasks.findIndex(todo => todo.id === action.id);
-      tasks.splice(taskIndex, 1);
-      return tasks;
+      return state.filter(task => task.id !== action.id)
+    case DELETE_INACTIVE:
+      return state.filter(task => task.active);
     case TOGGLE_TODO:
-      return state.map((todo) => {
-        if (todo.id === action.id) {
-          return Object.assign({}, todo, { active: !todo.active });
+      return state.map((task) => {
+        if (task.id === action.id) {
+          return Object.assign({}, task, { active: !task.active });
         }
-        return todo;
+        return task;
       });
     case TOGGLE_ALL:
       if (state.some(task => task.active)) {

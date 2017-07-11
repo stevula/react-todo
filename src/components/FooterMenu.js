@@ -25,7 +25,7 @@ class FooterMenu extends Component {
         <div className="clear-completed">
           <button
             className={this.props.tasks.some(t => !t.active) ? '' : 'invisible'}
-            onClick={this.props.clearCompleted}>
+            onClick={this.props.deleteInactive}>
             Clear completed
           </button>
         </div>

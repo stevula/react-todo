@@ -6,9 +6,10 @@ export const FILTERS = {
 
 export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
+export const DELETE_INACTIVE = 'DELETE_INACTIVE'
 export const TOGGLE_TODO = 'TOGGLE_TODO';
-export const SET_FILTER = 'SET_FILTER';
 export const TOGGLE_ALL = 'TOGGLE_ALL';
+export const SET_FILTER = 'SET_FILTER';
 
 export function addTask(description) {
   return {
@@ -21,6 +22,10 @@ export function addTask(description) {
 
 export function deleteTask(id) {
   return { type: DELETE_TODO, id }
+};
+
+export function deleteInactive(id) {
+  return { type: DELETE_INACTIVE, id }
 };
 
 export function toggleTaskActive(id) {
