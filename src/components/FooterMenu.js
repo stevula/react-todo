@@ -5,10 +5,8 @@ import FilterContainer from '../containers/FilterContainer';
 
 class FooterMenu extends Component {
   render() {
-    if (this.props.tasks.length === 0) return null;
-
-    // TODO factor this out
-    const itemCount = this.props.tasks.filter(t => t.active).length;
+    const itemCount = this.props.tasks.length;
+    if (itemCount === 0) return null;
 
     return (
       <section className="menu">
@@ -19,14 +17,14 @@ class FooterMenu extends Component {
         <div className="task-filter">
           <FilterContainer filter="all" active={true} />
           <FilterContainer filter="active" />
-          <FilterContainer filter="completed" />
+          <FilterContainer filter="inactive" />
         </div>
 
-        <div className="clear-completed">
+        <div className="clear-inactive">
           <button
             className={this.props.tasks.some(t => !t.active) ? '' : 'invisible'}
             onClick={this.props.deleteInactive}>
-            Clear completed
+            Clear inactive
           </button>
         </div>
       </section>

@@ -5,9 +5,9 @@ import TasksList from '../components/TasksList';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    tasks: state.tasks.filter((t) => {
-      if (state.filter === 'active') return t.active;
-      if (state.filter === 'complete') return !t.active;
+    tasks: state.tasks.filter((task) => {
+      if (state.filter === 'active') return task.active;
+      if (state.filter === 'inactive') return !task.active;
       return true;
     }),
   };
@@ -23,7 +23,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
   };
 };
-
 
 const TasksListContainer = connect(
   mapStateToProps,

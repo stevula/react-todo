@@ -9,7 +9,7 @@ const Filter = ({ filter, active, onClick }) => {
         e.preventDefault;
         onClick();
       })}>
-      {filter}
+      {filter === 'inactive' ? 'completed' : filter}
     </button>
   );
 }

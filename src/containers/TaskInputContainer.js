@@ -4,7 +4,6 @@ import TaskInput from '../components/TaskInput';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
   return {};
 };
 
@@ -15,8 +14,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
   };
 };
-
-console.log(TaskInput)
 
 const TaskInputContainer = connect(
   mapStateToProps,

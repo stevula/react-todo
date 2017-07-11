@@ -21,7 +21,7 @@
   text-align: right;
 }
 
-.clear-completed:hover {
+.clear-inactive:hover {
   text-decoration: underline;
 }
 
